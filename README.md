@@ -1,4 +1,4 @@
-# Proyecto INF236 Grupo 10
+# PROYECTO INF236 - GRUPO 10
 
 ## Integrantes
 
@@ -10,7 +10,7 @@
 
 ### Requerimientos
 
-Este proyecto fue creado utilizando Python 3.11, por lo que se recomienda utilizar esta versión o una superior para su ejecución.
+Este proyecto fue creado utilizando `Python 3.11`, por lo que se recomienda utilizar esta versión o una superior para su ejecución.
 
 Se recomienda (aunque no es necesario) utilizar un entorno virtual para la ejecución del proyecto.
 
@@ -50,4 +50,10 @@ Una vez obtenidos, se deben guardar en un archivo `.env` que debe ser añadido a
 ```env
 GOOGLE_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXXXXX30hrwZnSe88"
 CX="XXXXXXXXXXXX346eb"
+```
+
+### Ejecución
+
+```bash
+py main.py
 ```
