@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hito 4</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <img src="{{ url_for('static', filename='img/apprende_logo.png') }}" alt="apprende_logo" draggable="false"> Apprende Helper ^_^
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- <footer>
+    placeholder
+  </footer> -->
+</body>
+
+{% block script %}{% endblock %}
+
+</html>

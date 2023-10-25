@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <section class="search-section">
+      <h1>¿Qué buscamos hoy?</h1>
+      <form id="search-form" class="input-area">
+        <textarea name="search-text" id="search-text" rows="1" placeholder="Ingrese su búsqueda..."></textarea>
+        <button id="search-button" name="search-button" type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <section class="resultados-busqueda" id="resultados-busqueda">
+      <div class="resultado-busqueda">
+        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRoFYiyUpwLQSvjO_Nz07JZZul2c_GyKKe-YJ2zy2Kmk6slI8SwO5pkWP8" alt="profile_picture" draggable="false">
+        <div class="resultado-metadata">
+          <span>j15 el rey de los papus</span>
+          <a href="https://www.linkedin.com/in/joaquin-antonio-veliz-carmona-5953a126b/">https://www.linkedin.com/in/joaquin-antonio-veliz-carmona-5953a126b/</a>
+        </div>
+      </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
