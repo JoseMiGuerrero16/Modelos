@@ -55,5 +55,7 @@ CX="XXXXXXXXXXXX346eb"
 ### Ejecución
 
 ```bash
-py main.py
+py app.py
 ```
+
+Y abrir el enlace que aparece en la consola.
