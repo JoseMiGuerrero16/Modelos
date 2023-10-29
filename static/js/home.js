@@ -10,7 +10,7 @@ textArea.addEventListener('keydown', (event) => {
     }
 });
 
-textArea.addEventListener('blur', (event) => {
+textArea.addEventListener('blur', () => {
     if (textArea.value === '') {
         searchButton.style.display = 'none';
     }
@@ -26,7 +26,7 @@ function displaySearch(data) {
         resultadoBusqueda.classList.add('resultado-busqueda');
 
         const imagen = document.createElement('img');
-        imagen.src = data[index].profile_picture;
+        imagen.src = data[index].foto_perfil;
         imagen.alt = 'profile_picture';
         imagen.draggable = 'false';
 
@@ -34,11 +34,11 @@ function displaySearch(data) {
         resultadoMetadata.classList.add('resultado-metadata');
 
         const titulo = document.createElement('span');
-        titulo.innerHTML = data[index].title;
+        titulo.innerHTML = data[index].titulo;
 
         const link = document.createElement('a');
-        link.href = data[index].link;
-        link.textContent = data[index].link;
+        link.href = data[index].enlace;
+        link.textContent = data[index].enlace;
 
         console.log(data[index]);
 
