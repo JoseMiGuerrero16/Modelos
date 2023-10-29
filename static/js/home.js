@@ -18,8 +18,10 @@ textArea.addEventListener('blur', () => {
 
 function displaySearch(data) {
     const resultadosBusqueda = document.getElementById('resultados-busqueda');
-
     resultadosBusqueda.innerHTML = '';
+
+    // Creamos un array para contener las tarjetas que deseamos mostrar con retraso
+    const cards = [];
 
     for (let index = 0; index < data.length; index++) {
         const resultadoBusqueda = document.createElement('div');
@@ -40,17 +42,38 @@ function displaySearch(data) {
         link.href = data[index].enlace;
         link.textContent = data[index].enlace;
 
-        console.log(data[index]);
-
         resultadoMetadata.appendChild(titulo);
         resultadoMetadata.appendChild(link);
 
         resultadoBusqueda.appendChild(imagen);
         resultadoBusqueda.appendChild(resultadoMetadata);
 
+        // Agregamos cada tarjeta al array de tarjetas
+        resultadoBusqueda.style.opacity = 0;
         resultadosBusqueda.appendChild(resultadoBusqueda);
+
+        cards.push(resultadoBusqueda);
     }
+
+    // Llamamos a la función para mostrar las tarjetas con retraso
+    displayCards(cards);
 }
+
+function displayCards(cards) {
+    let index = 0;
+  
+    function showCard() {
+      if (index < cards.length) {
+        const card = cards[index];
+        card.style.opacity = 1;
+        index++;
+        setTimeout(showCard, 50);
+      }
+    }
+  
+    showCard();
+  }
+
 
 document.getElementById('search-form').addEventListener('submit', async function(event) {
     event.preventDefault();

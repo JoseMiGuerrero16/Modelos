@@ -95,6 +95,7 @@
   color: white;
   display: flex;
   border-radius: 6px;
+  transition: opacity 0.5s;
 }
 
 .resultado-busqueda:hover {
