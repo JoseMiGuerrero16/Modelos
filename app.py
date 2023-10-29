@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from utils.search import google_custom_search
+from src.utils.search import google_custom_search
 
 app = Flask(__name__)
 
