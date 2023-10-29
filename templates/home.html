@@ -6,17 +6,18 @@
 
 {% block content %}
 <div class="container">
-    <section class="search-section">
-      <h1>¿Qué buscamos hoy?</h1>
-      <form id="search-form" class="input-area">
-        <textarea name="search-text" id="search-text" rows="1" placeholder="Ingrese su búsqueda..."></textarea>
-        <button id="search-button" name="search-button" type="submit">Buscar</button>
-      </form>
-    </section>
+  <section class="search-section">
+    <h1>¿Qué buscamos hoy?</h1>
+    <form id="search-form" class="input-area">
+      <input class="search-input" type="search" name="search-text" id="search-text"
+        placeholder="Ingrese su búsqueda...">
+      <button id="search-button" name="search-button" type="submit">Buscar</button>
+    </form>
+  </section>
 
-    <section class="resultados-busqueda" id="resultados-busqueda">
-      <div class="resultado-busqueda"></div>
-    </section>
+  <section class="resultados-busqueda" id="resultados-busqueda">
+    <p style="text-align: center; color: grey;">Aquí aparecerán los resultados!</p>
+  </section>
 </div>
 {% endblock %}
 
