@@ -44,8 +44,8 @@ Una vez obtenidos, se deben guardar en el archivo `.env` que debe ser añadido a
 
 ```env
 OPENAI_API_KEY="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"
-GOOGLE_API_KEY="XXXXXXXXXXXXXXXXXXXXXXXXXXXX30hrwZnSe88"
-CX="XXXXXXXXXXXX346eb"
+GOOGLE_API_KEY="AIzaSyBocYl4urZmLA0NGV2iUSWP30hrwZnSe88"
+CX="b39ac29fd237346eb"
 ```
 
 ### MongoDB
