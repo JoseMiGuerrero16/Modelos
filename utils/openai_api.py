@@ -8,7 +8,7 @@ client = OpenAI(
 )
 
 def description_filter(prompt):
-    return prompt
+    # return prompt
     return client.chat.completions.create(
         messages=[
             {

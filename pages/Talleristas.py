@@ -60,18 +60,21 @@ def save_selected_profiles(talleristas):
         on_save()
 
 if descripcion_taller:
+    success = True
     with st.spinner("Filtrando la descripción..."):
         descripcion_filtrada = description_filter(descripcion_taller)
         if "[error]" in descripcion_filtrada[:7].lower():
             st.error(descripcion_filtrada[7:])
-        else:
-            with st.spinner("Buscando talleristas..."):
-                talleristas = google_custom_search(descripcion_filtrada)
-                with st.form(key="form_talleristas"):
-                    for tallerista in talleristas:
-                        display_info_card(tallerista)
-                    col1, col2, col3 = st.columns([0.75, 1, 0.75])
-                    with col2:
-                        submitted = st.form_submit_button("Guardar talleristas seleccionados")
-                    if submitted:
-                        save_selected_profiles(talleristas)
+            success = False
+    if success:
+        with st.spinner("Buscando talleristas..."):
+            sleep(1)
+            talleristas = google_custom_search(descripcion_filtrada)
+            with st.form(key="form_talleristas"):
+                for tallerista in talleristas:
+                    display_info_card(tallerista)
+                col1, col2, col3 = st.columns([0.75, 1, 0.75])
+                with col2:
+                    submitted = st.form_submit_button("Guardar talleristas seleccionados")
+                if submitted:
+                    save_selected_profiles(talleristas)
