@@ -1,6 +1,11 @@
 from decouple import config
 from googleapiclient.discovery import build
-from ..models.tallerista import Tallerista
+
+class Tallerista:
+    def __init__(self, nombre, linkedin, foto_perfil) -> None:
+        self.nombre = nombre
+        self.linkedin = linkedin
+        self.foto_perfil = foto_perfil
 
 GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 CX = config('CX')
