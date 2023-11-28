@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit.logger import get_logger
-from utils.titulo_principal import main_cfg
+from utils.titulo_principal import show_title
 
 LOGGER = get_logger(__name__)
 
@@ -12,17 +12,18 @@ def run():
 
     st.sidebar.write("Navegación")
 
-    main_cfg()
+    show_title()
 
     st.write(
-    '''
-    ### :rocket: Getting Started
+        '''
+    ### :rocket: Cómo usar la aplicación
 
     Para comenzar dirígete a la barra lateral izquierda y selecciona la opción de **Talleristas** o **Insumos**.
-    En el apartado de **Talleristas** podrás buscar tallerista describiendo el tipo de taller que deseas realizar.
-    En el apartado de **Insumos** podrás buscar insumos describiendo el tipo de producto que quieras adquirir.
+    En el apartado de **Talleristas** podrás buscar tallerista describiendo el tipo de taller que desees realizar
+    y en el apartado de **Insumos** podrás buscar productos señalando su nombre.
 
-    Finalmente, en el apartado de **Historial** aparecerán aquellos talleristas e insumos que hayas marcado con el símbolo :star:, y podrás eliminarlos con el símbolo :x:.
+    Finalmente, en el apartado de **Historial** aparecerán aquellos talleristas que hayas marcado con el símbolo :star: 
+    y podrás eliminarlos con el símbolo :x:.
     '''
     )
 

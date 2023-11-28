@@ -1,13 +1,13 @@
 import streamlit as st
-from utils.titulo_principal import main_cfg
 import requests
+from utils.titulo_principal import show_title
 
 st.set_page_config(
-    page_title="Historial",
+    page_title="ACS - Historial",
     page_icon=":book:"
 )
 
-main_cfg()
+show_title()
 
 st.markdown("### :star: Marcadores")
 
@@ -32,9 +32,10 @@ def delete_selected_profiles(talleristas):
     if perfiles_seleccionados:
         response = requests.delete('http://localhost:8000/talleristas/', json=perfiles_seleccionados)
         if response.status_code == 200:
-            st.success('Talleristas eliminados con éxito')
+            st.sidebar.success('Talleristas eliminados con éxito.')
+            st.rerun()
         else:
-            st.error('Hubo un problema al eliminar los talleristas')
+            st.sidebar.error('Hubo un problema al eliminar los talleristas.')
 
 def show_saved_bookmarks():
     with st.spinner("Cargando marcadores..."):
@@ -49,7 +50,7 @@ def show_saved_bookmarks():
                         display_info_card(tallerista)
                     _, col2, _ = st.columns([0.75, 1, 0.75])
                     with col2:
-                        submitted = st.form_submit_button("Eliminar talleristas seleccionados.")
+                        submitted = st.form_submit_button("Eliminar talleristas seleccionados")
                     if submitted:
                         delete_selected_profiles(saved_talleristas)
         else:

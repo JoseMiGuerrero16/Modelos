@@ -1,8 +1,6 @@
 from decouple import config
 from openai import OpenAI
 
-# Ojo que hay que meterla en alguna API hecha por nosotros, y que la aplicación acceda a ella mediante esa API.
-
 client = OpenAI(
     api_key=config("OPENAI_API_KEY")
 )

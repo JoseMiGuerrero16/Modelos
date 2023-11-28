@@ -1,6 +1,6 @@
 import streamlit as st
 
-def main_cfg():
+def show_title():
     st.markdown(
         """
         <style>

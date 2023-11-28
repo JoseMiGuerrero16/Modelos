@@ -42,10 +42,10 @@ def process_url(url):
         Producto(product_name, product_price, url, product_image_url))
 
 
-def search_supply(query, numpage):
+def search_supply(query):
     global productos
 
-    url = f'https://www.jumbo.cl/busqueda?ft={query}&page={numpage}'
+    url = f'https://www.jumbo.cl/busqueda?ft={query}'
 
     response = requests.get(url)
     html_content = response.text
@@ -79,6 +79,8 @@ def search_supply(query, numpage):
             'enlace': producto.enlace,
             'imagen': producto.imagen
         })
+
+    productos = []
 
     return productos_tmp
 
